@@ -1,7 +1,7 @@
 # sparc-t4-recognition
 ## An M4 macro for autoconf to recognize SPARC T4+ CPUs
 
-SPARC-T4 + processors, in addition to support for backward compatibility with the SPARCv9 architecture, have new specific assembler instructions.
+SPARC-T4+ processors, in addition to support for backward compatibility with the SPARCv9 architecture, have new specific assembler instructions.
 
 Since compilers (GCC, CLang, etc.) do not bother to recognize SPARC processors at the preprocessor level (excluding SPARCv8 and SPARCv9 architectures), I had to write a macro.
 
