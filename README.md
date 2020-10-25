@@ -16,7 +16,7 @@ if test ! -z "`uname -p 2>&1 | $EGREP -o -E 'sparc'`"; then
 fi
 ```
 
-ACTION-IF-FOUND sets the variable SPARC_T4, using which it is easy to implement processor-specific conditional compilation
+ACTION-IF-FOUND sets the variable SPARC_T4, using which it is easy to implement processor-specific conditional compilation:
 
 ```c
 #	if defined(__sparc)
