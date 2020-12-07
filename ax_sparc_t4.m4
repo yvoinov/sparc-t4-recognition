@@ -44,9 +44,9 @@
 
 AC_DEFUN([AX_SPARC_T4],[
   AC_MSG_CHECKING([if assembler supports PAUSE instruction on SPARC])
-  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([],[__asm__("wr %%g0, 128, %%asr27\n\t")])],
+  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([],[__asm__("wr %g0, 128, %asr27\n\t")])],
                     [AC_MSG_RESULT([yes])
-                     AC_SUBST($1)],
+                     AC_SUBST([$1],[1])],
                     [AC_MSG_RESULT([no])
-                     ])
+                     AC_SUBST([$1])])
 ])
