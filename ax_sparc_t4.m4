@@ -42,9 +42,27 @@
 
 #serial 3
 
+# To do that on compilation stage we're trying to read from v9e ancillary state register
 AC_DEFUN([AX_SPARC_T4],[
-  AC_MSG_CHECKING([if assembler supports PAUSE instruction on SPARC])
-  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([],[__asm__("wr %g0, 128, %asr27\n\t")])],
+  AC_LANG(C)
+  AC_MSG_CHECKING([if assembler supports T4+ instructions on SPARC])
+  AC_RUN_IFELSE([AC_LANG_PROGRAM([
+#include <signal.h>
+#include <stdlib.h>
+void _sigill_handler(int signum)
+{
+	exit(1);
+}
+                                 ],
+                                 [
+signal(SIGILL, &_sigill_handler);
+#if __sparc__
+__asm__ ("rd %%asr26, %%g0\n\t":::);
+#else
+#error This is not SPARC
+#endif
+return 0;
+                                 ])],
                     [AC_MSG_RESULT([yes])
                      AC_SUBST([$1],[1])],
                     [AC_MSG_RESULT([no])
