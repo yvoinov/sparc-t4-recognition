@@ -48,5 +48,5 @@ AC_DEFUN([AX_SPARC_T4],[
                     [AC_MSG_RESULT([yes])
                      AC_SUBST([$1],[1])],
                     [AC_MSG_RESULT([no])
-                     AC_SUBST([$1])])
+                     AC_SUBST([$1],[0])])
 ])
