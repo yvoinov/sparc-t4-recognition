@@ -1,9 +1,6 @@
 # sparc-t4-recognition
-<<<<<<< Updated upstream
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://github.com/yvoinov/sparc-t4-recognition/blob/main/LICENSE)
 
-=======
->>>>>>> Stashed changes
 ## M4 macro for autoconf to recognize SPARC T4+ CPUs
 
 SPARC-T4+ processors, in addition to support for backward compatibility with the SPARCv9 architecture, have new specific assembler instructions.
